@@ -1,12 +1,13 @@
 package exercises
 
-fun countVowels(phrase: String): Int{
+val VOWELS = "aeiou"
+val CONSONANTS = "bcdfghjklmnpqrstvxyz"
 
-    val VOWELS = "aeiou"
+fun countVowels(phrase: String): Int {
     var result = 0
 
-    for (letter in phrase.toLowerCase()){
-        if (letter in VOWELS){
+    for (letter in phrase.toLowerCase()) {
+        if (letter in VOWELS) {
             result++
         }
     }
@@ -14,15 +15,16 @@ fun countVowels(phrase: String): Int{
     return result
 }
 
-fun countConsonants(phrase: String): Int{
-    val CONSONANTS = "bcdfghjklmnpqrstvxyz"
+fun countConsonants(phrase: String): Int {
     var result = 0
 
-    for (letter in phrase.toLowerCase()){
-        if (letter in CONSONANTS){
+    for (letter in phrase.toLowerCase()) {
+        if (letter in CONSONANTS) {
             result++
         }
     }
 
     return result
 }
+
+fun countVowelsFilter(phrase: String) = phrase.filter { it in VOWELS }.length
